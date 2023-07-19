@@ -6,6 +6,7 @@ import './App.css'
 // import Grid from '@mui/material/Grid'; // Grid version 1
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -52,16 +53,28 @@ function App() {
   )
 }
 
+const longasschatlines = ["This is where my text will go!",
+"This is a bunch of extra text!",
+"There's a lot!",
+"That's on purpose",
+"Hopefully,",
+"We can get this to go beyond the bounds of these elements",
+"And maybe scroll internally??",
+"??",
+"??",
+"??"];
 function ChatLog(props) {
   const {messages} = props;
   console.log({messages});
   return (
-    <>
+    <Box sx={{ maxHeight: 100, overflow: 'auto' }}>
     <Grid xs={8}>
-    <Paper>This is where my text will go!</Paper>
+      <Paper>
+        <ul>{ longasschatlines.map((line) => <li>${line}</li>) }</ul>
+      </Paper>
     </Grid>
     <Grid xs={4}><Paper>This can be a sidebar</Paper></Grid>
-    </>
+    </Box>
   );
 }
 

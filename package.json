@@ -7,11 +7,15 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "testbuild": "tsc -p tsconfig.test.json",
+    "test": "npm run testbuild && node dist/runner.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@google-cloud/pubsub": "^3.7.1",
     "@mui/material": "^5.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -25,7 +29,7 @@
     "eslint": "^8.44.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
-    "typescript": "^5.0.2",
+    "typescript": "^5.1.6",
     "vite": "^4.4.0"
   }
 }

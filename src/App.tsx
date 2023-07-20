@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const data = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-      console.log({ data });
+      // console.log({ data });
       const json = await data.json();
       console.log({ json });
     }
@@ -63,7 +63,7 @@ const longasschatlines = ["This is where my text will go!",
 "??",
 "??",
 "??"];
-function ChatLog(props) {
+function ChatLog(props: any) {
   const {messages} = props;
   console.log({messages});
   return (

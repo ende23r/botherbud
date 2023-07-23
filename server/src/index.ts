@@ -1,4 +1,3 @@
-import { func } from "./lib";
 import * as express from "express";
 
 const PORT = 3000;

@@ -1,11 +1,11 @@
 import * as express from "express";
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 const app = express();
 
-app.get("/", (req, res) => {
-  console.log("Processing request");
-  res.send("Success!");
+app.get("/statusy", (req, res) => {
+  console.log("Health check");
+  res.send(`Healthy! Serving on port ${PORT}`);
 });
 
 app.listen(PORT, () => {

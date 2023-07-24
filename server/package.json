@@ -4,9 +4,12 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "dev": "tsc --watch & nodemon build/index.js",
-    "build": "tsc"
+    "build": "npm run clean; tsc",
+    "clean": "rm -rf build/*",
+    "check": "npm run typecheck",
+    "dev": "tsc --watch & PORT=3000 nodemon build/index.js",
+    "start": "node build/index.js",
+    "typecheck": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
